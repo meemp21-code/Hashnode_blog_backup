@@ -1,0 +1,33 @@
+When working on Machine Learning projects, we often need to adjust the data to make algorithms run faster and more efficiently. This adjustment involves methods like **Normalization** and **Standardization**.
+
+### Normalization
+
+$$X normalized = X-Xmin/Xmax- Xmin$$
+
+***X = original value , Xmin = minimum value in the dataset , Xmax = maximum value in the dataset.***
+
+For example, imagine a dataset with two columns: **Salary** and **Years of Experience**. While "Experience" might range from 1 to 10 years, "Salary" could be in the thousands, like 10000 or 20000. These values are on very different scales, which can confuse the learning algorithm.
+
+To solve this, we use **Normalization** (also called Min-Max Scaling). This method resizes the values to fit within a specific range, like \[0, 1\] or \[-1, 1\]. By bringing the data into a similar scale, the algorithm can focus better on patterns in the data, improving both speed and accuracy.
+
+In short, when the data's range is uneven, we normalize it to make it easier for the algorithm to learn.
+
+### Standardization
+
+$$Xstandardized = X−μ/σ ​$$
+
+***μ = mean , σ = standard deviation***
+
+**Standardization** is a data scaling technique that adjusts the values in a dataset so they have a mean (μ) of 0 and a standard deviation(σ )of 1\*\*.\*\* This process transforms the data into a standard normal distribution (bell curve shape). It is also called Z-score normalization.
+
+Use it when data has varying scales for example, height in centimeters and weight in kilograms or standardization is preferred for a feature if it can sometimes have extremely high or low values.
+
+# Conclusion
+
+There’s no strict rule for when to use these techniques; it depends on the situation. The explanations above are just basic guidelines. In practice, you can try both normalization and standardization and see which one works better for your specific problem.
+
+But here are some points which you can also consider
+
+- Many algorithms like logistic regression, support vector machines, and principal component analysis perform better with standardized data.
+- Use when data has outliers because standardization is less sensitive to outliers compared to normalization.
+- Unsupervised learning algorithms like Clustering, in practice, more often benefit from standardization than from normalization
